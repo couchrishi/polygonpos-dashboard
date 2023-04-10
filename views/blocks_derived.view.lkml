@@ -3,7 +3,7 @@ view: blocks_derived {
     sql:
       SELECT
         *,
-        timestamp - LAG(timestamp) OVER (ORDER BY timestamp) as block_time
+        UNIX_SECONDS(timestamp) - LAG(UNIX_SECONDS(timestamp)) OVER (ORDER BY timestamp) as block_time_seconds
       FROM
          public-data-finance.crypto_polygon.blocks
       ;;
@@ -27,8 +27,8 @@ view: blocks_derived {
 
   dimension: block_time {
     type: number
-    sql: ${TABLE}.block_time;;
-    label: "Block Time"
+    sql: ${TABLE}.block_time_seconds;;
+    label: "Block Time (seconds)"
   }
 
   measure: block_count {
