@@ -44,7 +44,7 @@ explore: logs {
 }
 
 explore: transactions {
-  label: "Polygon PoS Transactions N/w Activity"
+  label: "Polygon PoS Transactions N/w Activity - Tx"
 }
 
 explore: tokens {}
@@ -52,5 +52,5 @@ explore: tokens {}
 explore: token_transfers {}
 
 explore: blocks {
-  label: "Polygon PoS Transactions N/w Activity"
+  label: "Polygon PoS Transactions N/w Activity - Blocks"
 }
