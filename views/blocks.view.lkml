@@ -151,8 +151,18 @@ view: blocks {
     sql: ${TABLE}.transactions_root ;;
   }
 
-  measure: count {
+  # measure: count {
+  #   type: count
+  #   drill_fields: []
+  # }
+  measure: block_count {
     type: count
-    drill_fields: []
+    label: "Block Count"
+  }
+
+  measure: avg_block_time {
+    type: average
+    sql: ${TABLE}.block_time;;
+    label: "Average Block Time"
   }
 }
