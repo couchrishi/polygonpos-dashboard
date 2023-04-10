@@ -157,18 +157,18 @@ view: blocks {
   #   label: "Block Time"
   # }
 
-  # measure: count {
-  #   type: count
-  #   drill_fields: []
-  # }
-  measure: block_count {
+  measure: count {
     type: count
-    label: "Block Count"
+    drill_fields: []
   }
+  # measure: block_count {
+  #   type: count
+  #   label: "Block Count"
+  # }
 
-  measure: avg_block_time {
-    type: average
-    sql: ${TABLE}.block_time;;
-    label: "Average Block Time"
-  }
+  # measure: avg_block_time {
+  #   type: average
+  #   sql: ${TABLE}.block_time;;
+  #   label: "Average Block Time"
+  # }
 }
