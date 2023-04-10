@@ -55,6 +55,14 @@ explore: blocks {
   label: "Polygon PoS Transactions N/w Activity - Blocks"
 }
 
+# explore: blocks_derived {
+#   label: "Blocks Derived"
+# }
+
 explore: blocks_derived {
-  label: "Blocks Derived"
+  label: "Blocks Combined"
+  join: blocks {
+    relationship: one_to_one
+    sql_on: ${blocks.timestamp_date} = ${blocks_derived.timestamp_date};;
+  }
 }
