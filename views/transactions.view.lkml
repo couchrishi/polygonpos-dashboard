@@ -175,7 +175,7 @@ view: transactions {
 
   measure: avg_gas_price {
     type: average
-    sql: ${TABLE}.gas_price;;
+    sql: ${TABLE}.receipt_effective_gas_price ;;
   }
 
   measure: transaction_count {
