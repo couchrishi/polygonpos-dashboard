@@ -169,7 +169,7 @@ view: transactions {
   # }
   measure: avg_gas_used {
     type: average
-    sql: ${TABLE}.gas_used ;;
+    sql: ${TABLE}.receipt_gas_used ;;
   }
 
 
