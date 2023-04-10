@@ -169,9 +169,8 @@ view: transactions {
   # }
   measure: avg_gas_used {
     type: average
-    sql: ${TABLE}.receipt_gas_used / 1000000000.0;;
-    value_format: "0.##########"  # Optional: you can adjust the number of decimal places displayed
-    label: "Gas provided by the sender (Gwei)"
+    sql: ${TABLE}.receipt_gas_used;;
+    label: "Avg Gas provided by the senders"
   }
 
 
@@ -179,7 +178,7 @@ view: transactions {
     type: average
     sql: ${TABLE}.receipt_effective_gas_price / 1000000000.0;;
     value_format: "0.##########"  # Optional: you can adjust the number of decimal places displayed
-    label: "Gas price (Gwei)"
+    label: "Avg Gas price (Gwei)"
   }
 
   measure: transaction_count {
