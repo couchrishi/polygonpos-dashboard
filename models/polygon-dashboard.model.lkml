@@ -54,3 +54,7 @@ explore: token_transfers {}
 explore: blocks {
   label: "Polygon PoS Transactions N/w Activity - Blocks"
 }
+
+explore: blocks_derived {
+  label: "Blocks Derived"
+}

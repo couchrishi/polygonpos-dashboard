@@ -151,11 +151,11 @@ view: blocks {
     sql: ${TABLE}.transactions_root ;;
   }
 
-  dimension: block_time {
-    type: number
-    sql: ${TABLE}.timestamp - LAG(${TABLE}.timestamp) OVER (ORDER BY ${TABLE}.timestamp);;
-    label: "Block Time"
-  }
+  # dimension: block_time {
+  #   type: number
+  #   sql: ${TABLE}.timestamp - LAG(${TABLE}.timestamp) OVER (ORDER BY ${TABLE}.timestamp);;
+  #   label: "Block Time"
+  # }
 
   # measure: count {
   #   type: count
