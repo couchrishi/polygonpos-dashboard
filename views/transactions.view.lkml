@@ -184,4 +184,24 @@ view: transactions {
   measure: transaction_count {
     type: count
   }
+
+  measure: transaction_volume {
+    type: number
+    sql: SUM(${value}) ;;
+    label: "Transaction Volume"
+  }
+
+  measure: value_transferred {
+    type: number
+    sql: SUM(${gas_price} * ${receipt_gas_used}gas_used}) ;;
+    label: "Value Transferred"
+  }
+
+  # dimension: token_symbol {
+  #   type: string
+  #   sql: ${TABLE}.to_address ;;
+  #   label: "Token Symbol"
+  # }
+
+
 }
