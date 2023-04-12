@@ -6,9 +6,9 @@ view: token_volume {
         SUM(transactions.value) AS transaction_volume,
         AVG(transactions.gas_used * transactions.gas_price) AS transaction_value
       FROM
-        `polygon-prod.token_history.transactions` AS transactions
+        `public-data-finance.crypto_polygon.transactions` AS transactions
       LEFT JOIN
-        `polygon-prod.token_history.tokens` AS tokens
+        `public-data-finance.crypto_polygon.tokens` AS tokens
       ON
         transactions.to_address = tokens.contract_address
       WHERE
