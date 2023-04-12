@@ -14,8 +14,8 @@ view: token_volume {
       WHERE
         tokens.symbol IS NOT NULL
       GROUP BY
-        token_symbol
-        transaction_value,
+        token_symbol,
+        transaction_value
       ORDER BY
         transaction_volume DESC
     ;;
