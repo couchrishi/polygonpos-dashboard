@@ -16,7 +16,7 @@ view: token_volume {
       GROUP BY
         token_symbol
       ORDER BY
-        transaction_volume DESC ;
+        transaction_volume DESC
     ;;
   }
 
