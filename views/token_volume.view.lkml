@@ -1,6 +1,6 @@
 view: token_volume {
   derived_table: {
-    sql: |
+    sql:
       SELECT
         tokens.symbol AS token_symbol,
         SUM(transactions.value) AS transaction_volume,
