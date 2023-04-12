@@ -6,9 +6,9 @@ view: token_volume {
         SUM(transactions.value) AS transaction_volume,
         AVG(transactions.gas_used * transactions.gas_price) AS transaction_value
       FROM
-        `public-data-finance.crypto_polygon.transactions` AS transactions
+        `polygon-prod.token_history.transactions` AS transactions
       LEFT JOIN
-        `public-data-finance.crypto_polygon.tokens` AS tokens
+        `polygon-prod.token_history.tokens` AS tokens
       ON
         transactions.to_address = tokens.contract_address
       WHERE
@@ -16,7 +16,8 @@ view: token_volume {
       GROUP BY
         token_symbol
       ORDER BY
-        transaction_volume DESC ;;
+        transaction_volume DESC ;
+    ;;
   }
 
   dimension: token_symbol {

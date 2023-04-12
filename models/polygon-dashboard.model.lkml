@@ -45,6 +45,7 @@ explore: logs {
 
 explore: transactions {
   label: "Polygon PoS Transactions N/w Activity - Tx"
+
 }
 
 explore: tokens {}
@@ -58,11 +59,14 @@ explore: blocks {
 # explore: blocks_derived {
 #   label: "Blocks Derived"
 # }
-
 explore: blocks_derived {
   label: "Blocks Combined"
   join: blocks {
     relationship: one_to_one
     sql_on: ${blocks.timestamp_date} = ${blocks_derived.timestamp_date};;
   }
+}
+
+explore: token_volume {
+  label: "Token volume"
 }
