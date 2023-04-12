@@ -1,14 +1,14 @@
 view: token_volume {
   derived_table: {
-    sql: |
+    sql:
       WITH transaction_values AS (
         SELECT
-          transactions.token_address,
-          AVG(transactions.gas_used * transactions.gas_price) AS transaction_value
+          transactions.to_address,
+          AVG(transactions.receipt_gas_used * transactions.gas_price) AS transaction_value
         FROM
           `public-data-finance.crypto_polygon.transactions` AS transactions
         GROUP BY
-          transactions.token_address
+          transactions.to_address
       )
 
       SELECT
@@ -20,11 +20,11 @@ view: token_volume {
       LEFT JOIN
       `public-data-finance.crypto_polygon.tokens` AS tokens
       ON
-      transactions.to_address = tokens.contract_address
+      transactions.to_address = tokens.address
       LEFT JOIN
       transaction_values
       ON
-      transactions.token_address = transaction_values.token_address
+      transactions.to_address = transaction_values.to_address
       WHERE
       tokens.symbol IS NOT NULL
       GROUP BY
